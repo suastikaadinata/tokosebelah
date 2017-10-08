@@ -1,0 +1,142 @@
+html{
+    position: relative;
+    min-height: 100%;
+}
+
+.container{
+    width: 1350px;
+    margin: 0 auto;
+}
+
+.btn{
+    background-color: #1abc9c;
+    color: white;
+    width: 100%;
+    border-color: #1abc9c;
+}
+
+.btn:hover{
+    background-color: #2ecc71;
+    border-color: #2ecc71;
+    color: white;
+}
+
+header {
+    top: 0;
+    border-bottom: 1px solid #1abc9c;
+    border-top: 1px solid #1abc9c;
+    position: fixed;
+    width: 100%;
+    margin-bottom: 100px;
+    background: rgba(255,255,255,0.95);
+}
+
+.web-logo img{
+    width: 100%;
+    background-size: cover;
+}
+
+.search{
+    margin-top: 20px;
+    width: 100%;
+}
+
+.search .input-lg{
+    background-color: #1abc9c;
+    color: white;
+    border-color: #1abc9c;
+}
+
+.search .form-control::placeholder{
+    color: white;
+}
+
+.search .form-control{
+    box-shadow: none;
+    height: 50px;
+}
+
+.search .submit-btn{
+    height: 50px;
+}
+
+.keranjang img{
+    background-color: cover;
+    width: 60%;
+}
+
+.login-col{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.login-btn{
+    background-color: white;
+    border: 2px solid #1abc9c;
+    color: #1abc9c;
+}
+
+.register-col{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.header-kategori-container{
+    margin-top: 10px;
+    background-color: #1abc9c;  
+}
+
+.header-kategori-list{
+    padding: none;
+    height: fit-content;
+    line-height: 17px;
+    text-align: center; 
+    border: 2px solid #1abc9c;
+}
+
+.header-kategori-list:hover{
+    cursor: pointer;
+    background-color: #2ecc71;
+    border-bottom: 2px solid black;
+}
+
+.kategori-list{
+    display: inline-block;    
+    font-size: 1.25em;
+    padding-top: 12px;
+    padding-bottom: 12px;   
+}
+
+.kategori-list a{
+    text-decoration: none;
+    color: white;
+    
+}
+
+section{
+    margin-top: 150px;
+    margin-bottom: 300px;
+}
+
+footer{
+    padding: 50px 0;
+    width: 100%;
+    background-color: #ecf0f1;
+    bottom: 0;
+    position: absolute;
+}
+
+.footer-left{
+    text-align: right;
+    border-right: 2px solid #7f8c8d;
+}
+
+.footer-left h3{
+    color: #7f8c8d;
+    margin: 37px 0 37px 0;
+}
+
+.footer-right img{
+    width: 100%;
+    background-size: cover;
+}
