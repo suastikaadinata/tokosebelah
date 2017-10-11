@@ -34,12 +34,32 @@
             <div class="col-lg-1 keranjang">
                  <a href=""><img src="{{ asset('img/keranjang.png') }}" ></a>
             </div>
-            <div class="col-lg-1 register-col">
-                <a href="" class="btn btn-default btn-lg register-btn">Register</a>
-            </div>
             <div class="col-lg-1 login-col">
-                <a href="" class="btn btn-default btn-lg login-btn">Login</a>
+                @if(!Auth::user())
+                <a href="/login" class="btn btn-default btn-lg login-btn">Login</a>
+                @else
+                    <div class="dropdown" style="display:inline-block;">
+                        <button class="btn btn-default btn-lg dropdown-toggle" type="button" id="headerDropdown"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            {{ Auth::user()->name }}
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="headerDropdown">
+                            @if(Auth::user()->isAdmin())
+                                <li><a href="/admin"><i class="fa fa-dashboard"></i> Admin Dashboard</a></li>
+                            @endif
+                            <li><a href="/profile"><i class="fa fa-user"></i> Profil</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                @endif
             </div>
+            <div class="col-lg-1 register-col">
+            @if(!Auth::user())
+                <a href="/register" class="btn btn-default btn-lg register-btn">Register</a>                             
+             @endif 
+             </div> 
         </div>
     </div>
     <div class="header-kategori-container">
@@ -69,11 +89,11 @@
     </div>  
 </footer>
 
+<script src="{{ asset('/js/jquery.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('/js/moment-with-locales.min.js') }}"></script>
 <script src="{{ asset('/js/bootstrap-datetimepicker.min.js') }}"></script>
 <script src="{{ asset('/js/auth.js') }}"></script>
-<script src="{{ asset('/js/jquery.min.js') }}"></script>
 
 </body>
 </html>

@@ -14,3 +14,4 @@
 Route::get('/', 'IndexController@index');
 
 Auth::routes();
+Route::get('/logout', 'Auth\LoginController@logout');
