@@ -11,4 +11,9 @@ class Foto extends Model
         'iklan_id',
         'foto'
     ];
+
+    public function getFotoAttribute($value)
+    {
+        return '/images/' . $value;
+    }
 }

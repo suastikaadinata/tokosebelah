@@ -13,8 +13,8 @@
 </head>
 <body>
     <div class="row">
-        <div class="col-lg-4"></div>
-        <div class="col-lg-4">
+        <div class="col-lg-4 col-md-4 col-sm-2"></div>
+        <div class="col-lg-4 col-md-4 col-sm-8">
             <div class="box">
                 <div class="web-logo">
                     <a href="/"><img src="{{ asset('img/logo-toko-sebelah.png') }}"></a>
@@ -25,7 +25,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4"></div>
+        <div class="col-lg-4 col-md-4 col-sm-2"></div>
     </div>
 
 <script src="{{ asset('/js/jquery.min.js') }}"></script>

@@ -6,8 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    protected $fillable = [
-        'nama', 'slug', 'parent_id', 'urutan', 'icon'
-    ];
+    protected $fillable = ['nama'];
 
+    public function iklan()
+    {
+        return $this->hasMany(Iklan::class);   
+    }
 }
+

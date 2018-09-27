@@ -16,14 +16,17 @@ class CreateNotificationTable extends Migration
         Schema::create('notification', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->integer('comment_id')->unsigned();
-            $table->integer('pesan_id')->unsigned();
+            $table->integer('comment_id')->unsigned()->nullable();
+            $table->integer('pesan_id')->unsigned()->nullable();
+            $table->integer('iklan_id')->unsigned()->nullable();
+            $table->boolean('like_dislike')->nullable();
             $table->boolean('read')->default(0);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('comment_id')->references('id')->on('comments')->onDelete('cascade');
             $table->foreign('pesan_id')->references('id')->on('pesan')->onDelete('cascade');
+            $table->foreign('iklan_id')->references('id')->on('iklan')->onDelete('cascade');
         });
     }
 

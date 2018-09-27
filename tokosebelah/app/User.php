@@ -17,8 +17,37 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-     public function isAdmin()
+    public function isAdmin()
     {
         return $this->tipe == 'admin';
+    }
+
+    public function iklan()
+    {
+        return $this->hasMany(Iklan::class);
+    }
+
+    public function belanja()
+    {
+        return $this->hasMany(Belanja::class);
+    }
+
+    public function foto()
+    {
+        if($this->foto == null){
+            return '/images/default-profile.png';
+        }else{
+            return '/images/' . $this->foto;
+        }
+    }
+
+    public function comment()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function pesan()
+    {
+        return $this->hasMany(Pesan::class);
     }
 }

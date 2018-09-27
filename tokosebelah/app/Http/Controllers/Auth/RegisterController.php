@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Poin;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -49,9 +50,9 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'username' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'username'      => 'required|string|max:255',
+            'email'         => 'required|string|email|max:255|unique:users',
+            'password'      => 'required|string|min:6|confirmed',
             'tanggal_lahir' => 'required|string',
         ]);
     }
@@ -64,12 +65,19 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['username'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-            'ttl'      => Carbon::createFromFormat("d/m/Y", $data['tanggal_lahir'])->format('Y-m-d'),
-            'tipe'     => 'user',
+        $user = User::create([
+            'name'      => $data['username'],
+            'email'     => $data['email'],
+            'password'  => bcrypt($data['password']),
+            'ttl'       => Carbon::createFromFormat("d/m/Y", $data['tanggal_lahir'])->format('Y-m-d'),
+            'tipe'      => 'user',
         ]);
+
+        Poin::create([
+            'user_id'   => $user->id,
+            'poin'      => 0
+        ]);
+
+        return $user;
     }
 }

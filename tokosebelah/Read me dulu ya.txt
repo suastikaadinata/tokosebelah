@@ -1,0 +1,17 @@
+Tutorial langkah awal klo mau pake laravel: 
+https://www.youtube.com/watch?v=GNdXrXSCdJM&list=PLCZlgfAG0GXDijjesNoqcCmuYpQSbpucl
+
+Nah klo mau jalanin webnya di ubah dulu configurasi apache di xampp nya
+pilih config->Apache(httpd.conf)->lalu search atau control+F trus ketik htdocs->
+kemudian ubah menjadi seperti ini:
+	DocumentRoot "C:/xampp/htdocs/tokosebelah/tokosebelah/public"
+	<Directory "C:/xampp/htdocs/tokosebelah/tokosebelah/public">
+->Setelah diubah maka tinggal di save dengan cara ctrl+s->kemudian close & jalankan apachenya
+->buka web browser->kemudian ketik localhost aja gk perlu di tambah apa2->selamat menikmati
+
+Note: 
+sebelum di pake buka dulu file .env trus atur pengaturan databasenya sesuai pengaturan phpmyadmin punya temen masing2
+DB_DATABASE=tokosebelah
+
+DB_USERNAME=username database tmn2
+DB_PASSWORD=password database tmn2 

@@ -17,6 +17,7 @@ class CreatePesanTable extends Migration
             $table->integer('pengirim_id')->unsigned();
             $table->integer('penerima_id')->unsigned();
             $table->increments('id');
+            $table->string('jenis');
             $table->text('isi');
             $table->timestamps();
 

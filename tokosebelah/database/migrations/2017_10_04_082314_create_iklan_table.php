@@ -21,11 +21,13 @@ class CreateIklanTable extends Migration
             $table->text('deskripsi');
             $table->decimal('harga', 13, 2);
             $table->boolean('isVerified');
-            $table->string('status');//laku atau tidak
-            $table->string('nomor_telepon');//laku atau tidak
+            $table->string('nomor_telepon');
             $table->string('alamat');
+            $table->integer('like');
+            $table->integer('dislike');
             $table->integer('provinsi_id')->unsigned();
             $table->integer('kabupaten_id')->unsigned();
+            $table->boolean('hapus');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
